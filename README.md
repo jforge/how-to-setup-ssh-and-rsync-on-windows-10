@@ -44,7 +44,7 @@ Use the private key for the SSH command and copy the public key to the `authoriz
 For Windows there are two different ways to achieve successful login by public key authentication
 
 1. For a regular user, add the public key to `C:/Users/<user>/.ssh/authorized_keys`
-1. For a user in the Administrator group, add the public key to `%ProgramData%/ssh/authorized_keys`
+1. For a user in the Administrator group, add the public key to `%ProgramData%/ssh/administrators_authorized_keys`
    The folder is the working space for OpenSSH and you need administrative access rights
 
 See working examples for this in the Test section below,
@@ -109,7 +109,7 @@ connect from any machine and try some scenarios:
   scp {rsync,d2u,u2d}.exe <user>@<windows-host>:C:/Windows/system32/OpenSSH
   scp cyg* <user>@<windows-host>:C:/Windows/system32/OpenSSH
   ```
-- Use Rsync locally on windows with some specific options
+- Use Rsync locally on windows with some specific options:
   ```
   rsync -r -v --size-only --chmod=ugo=rwX "D:/projects" "E:/backup"
   ```
